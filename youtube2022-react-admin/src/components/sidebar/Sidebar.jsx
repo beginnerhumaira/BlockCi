@@ -50,13 +50,13 @@ const Sidebar = () => {
           <Link to="/users" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineIcon className="icon" />
-              <span>Profile</span>
+              <span>Projects</span>
             </li>
           </Link>
           <Link to="/products" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
-              <span>Projects</span>
+              <span>Profile</span>
             </li>
           </Link>
           {/* <li>

@@ -12,6 +12,7 @@ import { useEffect } from "react"
 import { onAuthStateChanged } from "firebase/auth"
 import { auth } from "./firebase"
 import Signup from "./pages/signup/Signup"
+import Profile from "./pages/profile/Profile"
 function App() {
   const { darkMode } = useContext(DarkModeContext)
   // get auth
@@ -54,11 +55,11 @@ function App() {
               />
             </Route>
             <Route path="products">
-              <Route index element={<List />} />
-              <Route path=":productId" element={<Single />} />
+              <Route index element={<Profile/>} />
+              <Route path=":productId" element={<Profile />} />
               <Route
                 path="new"
-                element={<New inputs={productInputs} title="Add New Product" />}
+                element={<New inputs={productInputs} title="Add Organization Details" />}
               />
             </Route>
           </Route>
