@@ -1,22 +1,36 @@
-import "./sidebar.scss";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import "./sidebar.scss"
+import DashboardIcon from "@mui/icons-material/Dashboard"
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline"
 //import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 //import CreditCardIcon from "@mui/icons-material/CreditCard";
-import StoreIcon from "@mui/icons-material/Store";
-import InsertChartIcon from "@mui/icons-material/InsertChart";
-import SettingsApplicationsIcon from "@mui/icons-material/SettingsApplications";
-import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSystemDaydreamOutlined";
-import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import { Link } from "react-router-dom";
-import { DarkModeContext } from "../../context/darkModeContext";
-import { useContext } from "react";
+import StoreIcon from "@mui/icons-material/Store"
+import InsertChartIcon from "@mui/icons-material/InsertChart"
+import SettingsApplicationsIcon from "@mui/icons-material/SettingsApplications"
+import ExitToAppIcon from "@mui/icons-material/ExitToApp"
+import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone"
+import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSystemDaydreamOutlined"
+import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined"
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined"
+import { Link } from "react-router-dom"
+import { DarkModeContext } from "../../context/darkModeContext"
+import { useContext } from "react"
+import { signOut } from "firebase/auth"
+import { auth } from "../../firebase"
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
-  const { dispatch } = useContext(DarkModeContext);
+  const { dispatch } = useContext(DarkModeContext)
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        navigate("/")
+        console.log("Signed out successfully")
+      })
+      .catch((error) => {
+      })
+  }
   return (
     <div className="sidebar">
       <div className="top">
@@ -58,11 +72,11 @@ const Sidebar = () => {
             <InsertChartIcon className="icon" />
             <span>Stats</span>
           </li>
-          <li>
+          {/* <li>
             <NotificationsNoneIcon className="icon" />
             <span>Notifications</span>
-          </li>
-          <p className="title">SERVICE</p>
+          </li> */}
+          {/* <p className="title">SERVICE</p>
           <li>
             <SettingsSystemDaydreamOutlinedIcon className="icon" />
             <span>System Health</span>
@@ -74,17 +88,16 @@ const Sidebar = () => {
           <li>
             <SettingsApplicationsIcon className="icon" />
             <span>Settings</span>
-          </li>
+          </li> */}
           <p className="title">USER</p>
           <li>
             <AccountCircleOutlinedIcon className="icon" />
             <span>Profile</span>
           </li>
-          <li>
+          <li onClick={handleLogout}>
             <ExitToAppIcon className="icon" />
             <span>Logout</span>
           </li>
-         
         </ul>
       </div>
       <div className="bottom">
@@ -98,7 +111,7 @@ const Sidebar = () => {
         ></div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

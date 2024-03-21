@@ -1,4 +1,6 @@
 // signup.scss
+
+
 .signup-container {
     display: flex;
     justify-content: center;
@@ -17,6 +19,7 @@
   .signup-title {
     text-align: center;
     font-weight: bold;
+    -webkit-text-fill-color: teal;
   }
   
   .signup-form {
@@ -37,7 +40,7 @@
   
   .signup-form button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: teal;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -45,7 +48,7 @@
   }
   
   .signup-form button:hover {
-    background-color: #0056b3;
+    background-color:teal;
   }
   
   .login-link {
@@ -54,7 +57,7 @@
   }
   
   .login-link a {
-    color: #007bff;
+    color:teal;
     text-decoration: none;
   }
   

@@ -1,4 +1,5 @@
 // login.scss
+
 .login-container {
     display: flex;
     justify-content: center;
@@ -17,6 +18,7 @@
   .login-title {
     text-align: center;
     font-weight: bold;
+    -webkit-text-fill-color: teal;
   }
   
   .login-form {
@@ -37,15 +39,16 @@
   
   .login-form button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color:teal;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
   }
   
   .login-form button:hover {
-    background-color: #0056b3;
+    background-color: teal;
   }
   
   .signup-link {
@@ -54,7 +57,7 @@
   }
   
   .signup-link a {
-    color: #007bff;
+    color: teal;
     text-decoration: none;
   }
   

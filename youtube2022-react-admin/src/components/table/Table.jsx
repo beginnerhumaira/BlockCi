@@ -13,7 +13,7 @@ const List = () => {
       id: 2342355,
       project: "GAZA FOOD",
       img: "https://m.media-amazon.com/images/I/81hH5vK-MCL._AC_UY327_FMwebp_QL65_.jpg",
-      Admin: "Asad Alkhidmat",
+      Admin: "Alkhidmat",
       date: "1 March",
       amount: 3000,
       method: "Online",
@@ -23,7 +23,7 @@ const List = () => {
       id: 2342355,
       project: "GAZA FOOD",
       img: "https://m.media-amazon.com/images/I/81hH5vK-MCL._AC_UY327_FMwebp_QL65_.jpg",
-      Admin: "Asad Alkhidmat",
+      Admin: " Alkhidmat",
       date: "1 March",
       amount: 2000,
       method: "Online",
@@ -33,7 +33,7 @@ const List = () => {
       id: 2342355,
       project: "GAZA FOOD",
       img: "https://m.media-amazon.com/images/I/81hH5vK-MCL._AC_UY327_FMwebp_QL65_.jpg",
-      Admin: "Asad Alkhidmat",
+      Admin: "Alkhidmat",
       date: "1 March",
       amount: 2000,
       method: "Online",
@@ -43,7 +43,7 @@ const List = () => {
       id: 2342355,
       project: "GAZA FOOD",
       img: "https://m.media-amazon.com/images/I/81hH5vK-MCL._AC_UY327_FMwebp_QL65_.jpg",
-      Admin: "Asad Alkhidmat",
+      Admin: "Alkhidmat",
       date: "1 March",
       amount: 2000,
       method: "Online",
@@ -81,10 +81,10 @@ const List = () => {
               <TableCell className="tableCell">
                 <div className="cellWrapper">
                   <img src={row.img} alt="" className="image" />
-                  {row.product}
+                  {row.project}
                 </div>
               </TableCell>
-              <TableCell className="tableCell">{row.customer}</TableCell>
+              <TableCell className="tableCell">{row.Admin}</TableCell>
               <TableCell className="tableCell">{row.date}</TableCell>
               <TableCell className="tableCell">{row.amount}</TableCell>
               <TableCell className="tableCell">{row.method}</TableCell>
