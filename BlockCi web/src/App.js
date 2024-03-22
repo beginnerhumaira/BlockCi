@@ -12,7 +12,8 @@ import { useEffect } from "react"
 import { onAuthStateChanged } from "firebase/auth"
 import { auth } from "./firebase"
 import Signup from "./pages/signup/Signup"
-import Profile from "./pages/profile/Profile"
+import Profile from './pages/profile/profile'
+
 function App() {
   const { darkMode } = useContext(DarkModeContext)
   // get auth
@@ -47,19 +48,19 @@ function App() {
               
             />
             <Route path="users">
-              <Route index element={<List />} />
+              <Route index element={<Profile />} />
               <Route path=":userId" element={<Single />} />
               <Route
                 path="new"
-                element={<New inputs={userInputs} title="Add New Project" />}
+                element={<New inputs={userInputs} title="Add Details" />}
               />
             </Route>
-            <Route path="products">
-              <Route index element={<Profile/>} />
-              <Route path=":productId" element={<Profile />} />
+            <Route path="projects">
+              <Route index element={<List />} />
+              <Route path=":projectId" element={<Single />} />
               <Route
                 path="new"
-                element={<New inputs={productInputs} title="Add Organization Details" />}
+                element={<New inputs={productInputs} title="Add New Project" />}
               />
             </Route>
           </Route>

@@ -2,11 +2,14 @@ import "./new.scss"
 import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar"
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined"
-
+import MilestoneForm from "../../components/milestone/milestoneform"
+import MilestoneList from "../../components/milestone/milestonelist"
 import React, { useState, useMemo, useEffect } from "react"
 import { appendProject, dummytest } from "../../helper/firestore"
 import { auth } from "../../firebase"
+import { useNavigate } from "react-router-dom"
 const New = ({ inputs, title }) => {
+  const navigate = useNavigate()
   const [file, setFile] = useState("")
   // const MemoizedMilestoneForm = React.memo(MilestoneForm);
   const [main, setMain] = useState("")
@@ -33,9 +36,24 @@ const New = ({ inputs, title }) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(formData)
-    // Pass form data and email of logged-in user to appendProject function
-    appendProject(auth.currentUser.email, formData)
+    const formattedMilestones = [
+      { name: formData.milestone1, image: null },
+      { name: formData.milestone2, image: null },
+      { name: formData.milestone3, image: null },
+    ]
+    
 
+    delete formData.milestone1
+    delete formData.milestone2
+    delete formData.milestone3
+    
+    const formattedFormData = {
+      ...formData,
+      milestones: formattedMilestones,
+    }
+    // Pass form data and email of logged-in user to appendProject function
+    appendProject(auth.currentUser.email, formattedFormData)
+    navigate("/projects")
     // Reset form data after submission if needed
     // setFormData({})
   }

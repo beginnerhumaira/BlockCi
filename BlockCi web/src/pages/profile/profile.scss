@@ -2,22 +2,35 @@
     display: grid;
     place-items: center;
     min-height: 100vh;
+    width: 100vw;
   
     form {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-items: center;
+
+      gap: 1rem;
   
       input[type="file"] {
         display: none;
       }
   
       label {
-        margin-top: 100px;
+        max-width: 5vw;
       }
   
       button {
         margin-top: 20px;
       }
     }
+  }
+
+  .my-text{
+    text-align: center;
+  }
+
+  .logo-img{
+    width: 200px;
+    height: 200px;
   }

@@ -6,14 +6,17 @@ import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
 
-const Navbar = () => {
+const Navbar = ({search, setSearch}) => {
   const { dispatch } = useContext(DarkModeContext);
 
   return (
     <div className="navbar">
       <div className="wrapper">
         <div className="search">
-          <input type="text" placeholder="Search..." />
+          <input
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+           type="text" placeholder="Search..." />
           <SearchOutlinedIcon />
         </div>
         <div className="items">
